@@ -58,3 +58,13 @@ svg > * {
   margin-right: 5px;
   pointer-events: none;
 }
+
+.letter {
+  background-color: royalblue;
+  cursor: pointer;
+}
+
+.letter--deactivated {
+  background-color: red;
+  filter: brightness(0.5);
+}
