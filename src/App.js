@@ -1,4 +1,5 @@
 import "./App.css";
+import Word from "./components/Word/Word";
 
 function App() {
   return (
@@ -18,13 +19,7 @@ function App() {
           <line class="stage1" x1="16" y1="80" x2="32" y2="80"></line>
         </svg>
       </div>
-      <ul class="guess-letters">
-        <li class="guess-letter empty"></li>
-        <li class="guess-letter">A</li>
-        <li class="guess-letter empty"></li>
-        <li class="guess-letter">A</li>
-        <li class="guess-letter empty"></li>
-      </ul>
+      <Word word="hello" lettersPlayed={["h", "p", "l", "i", "o"]} />
       <section class="used-letters-container">
         <h2>Used letters</h2>
         <ul class="used-letters">
