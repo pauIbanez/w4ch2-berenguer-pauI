@@ -43,6 +43,7 @@ svg > * {
 }
 .game-result {
   font-size: 60px;
+  height: 60px;
 }
 .letters {
   margin: 0;
