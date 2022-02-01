@@ -15,4 +15,32 @@ describe("Given UsedLetters", () => {
       expect(elements).toBe(expectedLength);
     });
   });
+
+  describe("When it's invoked passing ['a']", () => {
+    test("should render A", () => {
+      const usedLetters = ["a"];
+      const classes = "used-letter";
+      render(<UsedLetters letters={usedLetters} classes={classes} />);
+
+      const element = screen.getAllByTestId("usedLetter")[0];
+
+      expect(element).toBeInTheDocument();
+    });
+  });
+
+  describe("When it's invoked passing ['e', 'f', 'c']", () => {
+    test("should render letter E, F, C", () => {
+      const usedLetters = ["e", "f", "c"];
+      const classes = "used-letter";
+
+      render(<UsedLetters letters={usedLetters} classes={classes} />);
+
+      const elementE = screen.getByText("E,");
+      const elementF = screen.getByText("F,");
+      const elementC = screen.getByText("C");
+      expect(elementE).toBeInTheDocument();
+      expect(elementF).toBeInTheDocument();
+      expect(elementC).toBeInTheDocument();
+    });
+  });
 });
