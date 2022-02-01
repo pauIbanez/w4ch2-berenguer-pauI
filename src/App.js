@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Letter from "./components/Letter/Letter";
 import UsedLetters from "./components/UsedLetters/UsedLetters";
@@ -33,12 +34,46 @@ function App() {
     "Z",
   ];
 
+  const [playedLetters, setPlayedLetters] = useState([]);
+  const [failCounter, setFailedCounter] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const word = "hello";
+
+  if (playing && failCounter === 11) {
+    // console.log("You loose");
+    setPlaying(false);
+  }
+
+  let checksum = 0;
+  Array.from(word.toUpperCase()).forEach((letter) => {
+    if (playedLetters.includes(letter)) {
+      checksum += 1;
+    }
+  });
+  if (playing && checksum === word.length) {
+    // console.log("You win");
+    setPlaying(false);
+  }
+
+  const onLetterClick = (id) => {
+    if (playing) {
+      const newPlayedLetters = [...playedLetters];
+      newPlayedLetters.push(defaultLetters[id]);
+      setPlayedLetters(newPlayedLetters);
+      if (!Array.from(word.toUpperCase()).includes(defaultLetters[id])) {
+        setFailedCounter(failCounter + 1);
+      }
+    }
+  };
+
   const letterComponents = defaultLetters.map((letter, index) => {
     return (
       <Letter
         letter={letter}
         key={index}
-        actionOnClick={() => {}}
+        actionOnClick={() => {
+          onLetterClick(index);
+        }}
         deactivatedClass="letter--deactivated"
       />
     );
@@ -67,12 +102,9 @@ function App() {
           <line className="stage1" x1="16" y1="80" x2="32" y2="80"></line>
         </svg>
       </div>
-      <Word word="hello" lettersPlayed={["h", "p", "l", "i", "o"]} />
-      <UsedLetters
-        letters={["h", "p", "l", "i", "o"]}
-        classUsedLetter="used-letter"
-      />
-      <section className="game-result">You're dead!</section>
+      <Word word={word} lettersPlayed={playedLetters} />
+      <UsedLetters letters={playedLetters} classUsedLetter="used-letter" />
+      <section className="game-result"></section>
       <ul className="letters">{letterComponents}</ul>
     </>
   );
