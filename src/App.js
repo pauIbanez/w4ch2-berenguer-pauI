@@ -1,5 +1,6 @@
 import "./App.css";
 import Letter from "./components/Letter/Letter";
+import UsedLetters from "./components/UsedLetters/UsedLetters";
 import Word from "./components/Word/Word";
 
 function App() {
@@ -67,15 +68,11 @@ function App() {
         </svg>
       </div>
       <Word word="hello" lettersPlayed={["h", "p", "l", "i", "o"]} />
-      <section className="used-letters-container">
-        <h2>Used letters</h2>
-        <ul className="used-letters">
-          <li className="used-letter">B,&nbsp;</li>
-          <li className="used-letter">B,&nbsp;</li>
-          <li className="used-letter">B</li>
-        </ul>
-      </section>
-      <section className="game-result">You're dead!</section>
+      <UsedLetters
+        letters={["h", "p", "l", "i", "o"]}
+        classUsedLetter="used-letter"
+      />
+      <section class="game-result">You're dead!</section>
       <ul className="letters">{letterComponents}</ul>
     </>
   );
