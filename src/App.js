@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="container">
+    <>
       <div class="hangman-container">
         <svg class="hangman" viewBox="0 0 96 96" width="300" height="300">
           <line class="stage11" x1="62" y1="70" x2="56" y2="56"></line>
@@ -118,7 +118,7 @@ function App() {
           <a href="z">Z</a>
         </li>
       </ul>
-    </div>
+    </>
   );
 }
 
