@@ -1,5 +1,4 @@
-const Hangman = () => {
-  return <p>Hola</p>;
-};
+
+const Hangman = () => {};
 
 export default Hangman;

@@ -1,5 +1,5 @@
-const Letter = () => {
-  return <p>Hola</p>;
-};
+
+const Letter = () => {};
+
 
 export default Letter;

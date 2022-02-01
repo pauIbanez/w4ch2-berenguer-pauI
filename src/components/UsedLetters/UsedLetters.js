@@ -1,3 +1,4 @@
+
 import "./UsedLetters.scss";
 
 const UsedLetters = ({ letters, classUsedLetter }) => {
@@ -16,5 +17,6 @@ const UsedLetters = ({ letters, classUsedLetter }) => {
     </section>
   );
 };
+
 
 export default UsedLetters;
