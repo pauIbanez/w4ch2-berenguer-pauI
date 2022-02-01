@@ -21,11 +21,31 @@ describe("Given Letter", () => {
       const letter = "A";
 
       render(<Letter letter={letter} actionOnClick={actionOnClick} />);
-      const element = screen.getByText(letter);
-      console.log(element);
+      const element = screen.getByText(letter).parentElement;
       element.click();
 
       expect(actionOnClick).toHaveBeenCalled();
+    });
+  });
+
+  describe("When it's invoked passing letter an actionOnClick and a deactivatedClass 'deactivated'", () => {
+    test("Then it should invoke actionOnClick when clicked and add the class 'deactivated'", () => {
+      const actionOnClick = jest.fn();
+      const letter = "A";
+      const deactivatedClass = "deactivated";
+
+      render(
+        <Letter
+          letter={letter}
+          actionOnClick={actionOnClick}
+          deactivatedClass={deactivatedClass}
+        />
+      );
+      const element = screen.getByText(letter).parentElement;
+      element.click();
+
+      expect(actionOnClick).toHaveBeenCalled();
+      expect(element.className).toMatch(deactivatedClass);
     });
   });
 });
