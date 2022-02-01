@@ -1,6 +1,5 @@
 const Word = ({ word, lettersPlayed }) => {
-  const baseWordLetters = Array.from(word);
-
+  const baseWordLetters = Array.from(word.toUpperCase());
   const finalWordToRender = baseWordLetters.map((letter, index) => {
     if (lettersPlayed.includes(baseWordLetters[index])) {
       return (
@@ -9,7 +8,6 @@ const Word = ({ word, lettersPlayed }) => {
         </li>
       );
     }
-
     return <li key={index} className="guess-letter empty"></li>;
   });
 
