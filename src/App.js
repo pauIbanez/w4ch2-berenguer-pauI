@@ -30,8 +30,8 @@ function App() {
         </ul>
       </section>
       <section class="game-result">You're dead!</section>
-      <ul class="letters">
-        <Letter letter="A" />
+      <ul className="letters">
+        <Letter letter="A" actionOnClick={() => {}} />
       </ul>
     </>
   );
