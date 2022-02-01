@@ -5,13 +5,23 @@ const UsedLetters = ({ letters, classUsedLetter }) => {
     <section className="used-letters-container">
       <h2>Used letters</h2>
       <ul className="used-letters">
-        {letters.map((letter, i, letters) =>
-          i !== letters.length - 1 ? (
+        {letters.map((letter, index, letters) =>
+          index !== letters.length - 1 ? (
             <li
+              key={index}
               className={classUsedLetter}
-            >{`${letter.toUpperCase()},&nbsp;`}</li>
+              data-testid="usedLetter"
+            >
+              {letter.toUpperCase()}, &nbsp;
+            </li>
           ) : (
-            <li className={classUsedLetter}>{`${letter.toUpperCase()}`}</li>
+            <li
+              key={index}
+              className={classUsedLetter}
+              data-testid="usedLetter"
+            >
+              {letter.toUpperCase()}
+            </li>
           )
         )}
       </ul>
