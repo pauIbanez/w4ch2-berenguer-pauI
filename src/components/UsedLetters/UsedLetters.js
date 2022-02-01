@@ -6,12 +6,20 @@ const UsedLetters = ({ letters, classUsedLetter }) => {
       <h2>Used letters</h2>
       <ul className="used-letters">
         {letters.map((letter, index, letters) =>
-          i !== letters.length - 1 ? (
-            <li key={index} className={classUsedLetter}>
+          index !== letters.length - 1 ? (
+            <li
+              key={index}
+              className={classUsedLetter}
+              data-testid="usedLetter"
+            >
               {letter.toUpperCase()}, &nbsp;
             </li>
           ) : (
-            <li key={index} className={classUsedLetter}>
+            <li
+              key={index}
+              className={classUsedLetter}
+              data-testid="usedLetter"
+            >
               {letter.toUpperCase()}
             </li>
           )
