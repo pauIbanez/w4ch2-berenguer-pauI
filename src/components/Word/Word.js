@@ -1,3 +1,4 @@
+
 const Word = ({ word, lettersPlayed }) => {
   const baseWordLetters = Array.from(word);
   const baseWordElements = baseWordLetters.map((letter, index) => {
@@ -17,6 +18,7 @@ const Word = ({ word, lettersPlayed }) => {
   });
 
   return <ul className="guess-letters">{finalWordToRender}</ul>;
+
 };
 
 export default Word;
