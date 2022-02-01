@@ -72,7 +72,7 @@ function App() {
         letters={["h", "p", "l", "i", "o"]}
         classUsedLetter="used-letter"
       />
-      <section class="game-result">You're dead!</section>
+      <section className="game-result">You're dead!</section>
       <ul className="letters">{letterComponents}</ul>
     </>
   );
