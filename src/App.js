@@ -39,9 +39,7 @@ function App() {
         <li class="letter">
           <a href="c">C</a>
         </li>
-        <li class="letter">
-          <a href="d">D</a>
-        </li>
+
         <li class="letter">
           <a href="e">E</a>
         </li>
