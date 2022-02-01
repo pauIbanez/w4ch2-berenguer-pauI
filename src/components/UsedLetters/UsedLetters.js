@@ -1,4 +1,3 @@
-
 import "./UsedLetters.scss";
 
 const UsedLetters = ({ letters, classUsedLetter }) => {
@@ -8,15 +7,16 @@ const UsedLetters = ({ letters, classUsedLetter }) => {
       <ul className="used-letters">
         {letters.map((letter, i, letters) =>
           i !== letters.length - 1 ? (
-            <li className={classUsedLetter}>{`${letter}, `}</li>
+            <li
+              className={classUsedLetter}
+            >{`${letter.toUpperCase()},&nbsp;`}</li>
           ) : (
-            <li className={classUsedLetter}>{`${letter}`}</li>
+            <li className={classUsedLetter}>{`${letter.toUpperCase()}`}</li>
           )
         )}
       </ul>
     </section>
   );
 };
-
 
 export default UsedLetters;
