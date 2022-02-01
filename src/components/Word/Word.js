@@ -7,7 +7,9 @@ const Word = ({ word, lettersPlayed }) => {
   const finalWordToRender = baseWordElements.map((wordElement, index) => {
     if (lettersPlayed.includes(baseWordLetters[index])) {
       return (
-        <li className="guess-letter">{baseWordLetters[index].toUpperCase()}</li>
+        <li key={index} className="guess-letter">
+          {baseWordLetters[index].toUpperCase()}
+        </li>
       );
     }
 
