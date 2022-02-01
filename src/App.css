@@ -62,9 +62,11 @@ svg > * {
 .letter {
   background-color: royalblue;
   cursor: pointer;
+  user-select: none;
 }
 
 .letter--deactivated {
+  cursor: initial;
   background-color: red;
   filter: brightness(0.5);
 }
