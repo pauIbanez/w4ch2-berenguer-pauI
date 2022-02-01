@@ -35,11 +35,17 @@ function App() {
   ];
 
   const [playedLetters, setPlayedLetters] = useState([]);
+  const [failCounter, setFailedCounter] = useState(0);
+
+  const word = "hello";
 
   const onLetterClick = (id) => {
     const newPlayedLetters = [...playedLetters];
     newPlayedLetters.push(defaultLetters[id]);
     setPlayedLetters(newPlayedLetters);
+    if (!Array.from(word.toUpperCase()).includes(defaultLetters[id])) {
+      setFailedCounter(failCounter + 1);
+    }
   };
 
   const letterComponents = defaultLetters.map((letter, index) => {
@@ -78,7 +84,7 @@ function App() {
           <line className="stage1" x1="16" y1="80" x2="32" y2="80"></line>
         </svg>
       </div>
-      <Word word="hello" lettersPlayed={playedLetters} />
+      <Word word={word} lettersPlayed={playedLetters} />
       <UsedLetters letters={playedLetters} classUsedLetter="used-letter" />
       <section className="game-result"></section>
       <ul className="letters">{letterComponents}</ul>
