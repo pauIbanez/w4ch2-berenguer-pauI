@@ -31,7 +31,11 @@ function App() {
       </section>
       <section class="game-result">You're dead!</section>
       <ul className="letters">
-        <Letter letter="A" actionOnClick={() => {}} />
+        <Letter
+          letter="A"
+          actionOnClick={() => {}}
+          deactivatedClass="letter--deactivated"
+        />
       </ul>
     </>
   );

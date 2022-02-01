@@ -8,7 +8,7 @@ const Letter = ({ letter, actionOnClick, deactivatedClass }) => {
   };
   return (
     <li
-      className={`letter${active ? "" : " letter-deactivated"}`}
+      className={`letter${active ? "" : ` ${deactivatedClass}`}`}
       onClick={onClick}
     >
       <a href="d">{letter}</a>
