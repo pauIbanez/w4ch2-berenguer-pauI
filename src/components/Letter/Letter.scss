@@ -1,0 +1,19 @@
+.letter {
+  background-color: royalblue;
+  cursor: pointer;
+  user-select: none;
+
+  &--deactivated {
+    cursor: initial;
+    background-color: red;
+    filter: brightness(0.5);
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 32px;
+    margin-left: 5px;
+    margin-right: 5px;
+    pointer-events: none;
+  }
+}
