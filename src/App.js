@@ -36,15 +36,33 @@ function App() {
 
   const [playedLetters, setPlayedLetters] = useState([]);
   const [failCounter, setFailedCounter] = useState(0);
-
+  const [playing, setPlaying] = useState(true);
   const word = "hello";
 
+  if (playing && failCounter === 11) {
+    // console.log("You loose");
+    setPlaying(false);
+  }
+
+  let checksum = 0;
+  Array.from(word.toUpperCase()).forEach((letter) => {
+    if (playedLetters.includes(letter)) {
+      checksum += 1;
+    }
+  });
+  if (playing && checksum === word.length) {
+    // console.log("You win");
+    setPlaying(false);
+  }
+
   const onLetterClick = (id) => {
-    const newPlayedLetters = [...playedLetters];
-    newPlayedLetters.push(defaultLetters[id]);
-    setPlayedLetters(newPlayedLetters);
-    if (!Array.from(word.toUpperCase()).includes(defaultLetters[id])) {
-      setFailedCounter(failCounter + 1);
+    if (playing) {
+      const newPlayedLetters = [...playedLetters];
+      newPlayedLetters.push(defaultLetters[id]);
+      setPlayedLetters(newPlayedLetters);
+      if (!Array.from(word.toUpperCase()).includes(defaultLetters[id])) {
+        setFailedCounter(failCounter + 1);
+      }
     }
   };
 
