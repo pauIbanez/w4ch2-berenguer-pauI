@@ -3,6 +3,46 @@ import Letter from "./components/Letter/Letter";
 import Word from "./components/Word/Word";
 
 function App() {
+  const defaultLetters = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
+
+  const letterComponents = defaultLetters.map((letter, index) => {
+    return (
+      <Letter
+        letter={letter}
+        key={index}
+        actionOnClick={() => {}}
+        deactivatedClass="letter--deactivated"
+      />
+    );
+  });
+
   return (
     <>
       <div class="hangman-container">
@@ -30,13 +70,7 @@ function App() {
         </ul>
       </section>
       <section class="game-result">You're dead!</section>
-      <ul className="letters">
-        <Letter
-          letter="A"
-          actionOnClick={() => {}}
-          deactivatedClass="letter--deactivated"
-        />
-      </ul>
+      <ul className="letters">{letterComponents}</ul>
     </>
   );
 }
