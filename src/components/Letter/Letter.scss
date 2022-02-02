@@ -1,11 +1,20 @@
 .letter {
-  background-color: royalblue;
+  background-color: #d3d3d3;
+  color: #1c1c1c;
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
 
   &--deactivated {
     cursor: initial;
-    background-color: red;
+    background-color: #d3d3d373;
+    color: #adadad;
     filter: brightness(0.5);
     pointer-events: none;
   }

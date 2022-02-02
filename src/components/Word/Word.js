@@ -1,3 +1,5 @@
+import "./word.scss";
+
 const Word = ({ word, lettersPlayed }) => {
   const baseWordLetters = Array.from(word.toUpperCase());
   const finalWordToRender = baseWordLetters.map((letter, index) => {

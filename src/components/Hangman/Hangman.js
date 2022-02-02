@@ -1,3 +1,5 @@
+import "./hangman.scss";
+
 const Hangman = ({ numberOfFails }) => {
   return (
     <div className="hangman-container">
@@ -6,13 +8,13 @@ const Hangman = ({ numberOfFails }) => {
           <line className="stage11" x1="62" y1="70" x2="56" y2="56"></line>
         )}
         {numberOfFails > 9 && (
-          <line class="stage10" x1="50" y1="70" x2="56" y2="56"></line>
+          <line className="stage10" x1="50" y1="70" x2="56" y2="56"></line>
         )}
         {numberOfFails > 8 && (
-          <line class="stage9" x1="68" y1="46" x2="56" y2="40"></line>
+          <line className="stage9" x1="68" y1="46" x2="56" y2="40"></line>
         )}
         {numberOfFails > 7 && (
-          <line class="stage8" x1="44" y1="46" x2="56" y2="40"></line>
+          <line className="stage8" x1="44" y1="46" x2="56" y2="40"></line>
         )}
         {numberOfFails > 6 && (
           <line className="stage7" x1="56" y1="40" x2="56" y2="56"></line>

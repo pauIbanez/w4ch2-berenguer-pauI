@@ -1,0 +1,15 @@
+svg.hangman {
+  width: 25rem;
+  height: 25rem;
+}
+svg > * {
+  stroke: white;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  transition: 0.25s;
+}
+
+circle {
+  fill: tomato;
+}
