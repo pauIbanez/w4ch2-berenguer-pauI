@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Letter.scss";
+import "./Letter_style.scss";
 
 const Letter = ({ letter, actionOnClick, deactivatedClass }) => {
   const [active, setActive] = useState(true);
