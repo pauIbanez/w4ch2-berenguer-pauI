@@ -1,8 +1,28 @@
 .used-letters {
   list-style: none;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
   margin: 0;
-  padding: 0;
 }
 
 .used-letter {
+  font-size: 1.5em;
+}
+
+.used-letters-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #00000080;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+}
+
+.used-letters__title {
+  margin: 0;
+  padding: 1rem 1rem 0 1rem;
 }
