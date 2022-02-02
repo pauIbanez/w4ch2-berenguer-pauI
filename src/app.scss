@@ -5,27 +5,17 @@
   margin: 30px;
   background-color: tomato;
   color: white;
+  border-radius: 30px;
 }
 
 .container {
   display: flex;
 }
-
-.used-letters {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+body {
+  background-color: #b14633;
 }
+
 .game-result {
   font-size: 60px;
   height: 60px;
-}
-.letters {
-  padding: 25px;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
 }
