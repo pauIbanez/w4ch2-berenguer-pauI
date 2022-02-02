@@ -1,4 +1,4 @@
-import "./Hangman.scss";
+import "./Hangman_style.scss";
 
 const Hangman = ({ numberOfFails }) => {
   return (
