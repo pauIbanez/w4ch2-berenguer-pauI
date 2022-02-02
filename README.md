@@ -17,7 +17,7 @@ responsabilidades:
 
 3. UsedLetters
 
-- recibe un array de letras y lo muestra al usuario para
+- recibe un array de letras y lo muestra al usuario
 
 4. Letters
 
