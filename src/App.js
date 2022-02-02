@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+import "./app.scss";
 import Hangman from "./components/Hangman/Hangman";
 import Letter from "./components/Letter/Letter";
 import UsedLetters from "./components/UsedLetters/UsedLetters";
@@ -82,15 +82,17 @@ function App() {
 
   return (
     <>
-      <Hangman numberOfFails={failCounter} />
-      <Word word={word} lettersPlayed={playedLetters} />
-      <UsedLetters letters={playedLetters} />
-      {!playing && (
-        <section className="game-result">
-          {failCounter >= 11 ? `You're dead` : `You win!`}
-        </section>
-      )}
-      <ul className="letters">{letterComponents}</ul>
+      <div className="game-container">
+        <Hangman numberOfFails={failCounter} />
+        <Word word={word} lettersPlayed={playedLetters} />
+        <UsedLetters letters={playedLetters} />
+        {!playing && (
+          <section className="game-result">
+            {failCounter >= 11 ? `You're dead` : `You win!`}
+          </section>
+        )}
+        <ul className="letters">{letterComponents}</ul>
+      </div>
     </>
   );
 }
