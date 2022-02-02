@@ -1,4 +1,4 @@
-import "./word.scss";
+import "./Word.scss";
 
 const Word = ({ word, lettersPlayed }) => {
   const baseWordLetters = Array.from(word.toUpperCase());

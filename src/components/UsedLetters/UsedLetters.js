@@ -1,4 +1,4 @@
-import "./usedLetters.scss";
+import "./UsedLetters.scss";
 
 const UsedLetters = ({ letters }) => {
   return (
